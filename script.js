@@ -159,7 +159,7 @@ window.addEventListener("scroll", function () {
   lastScrollTop = scrollTop;
 });
 
-// Kursor.js (lib)
+// Kursor.js (lib
 new kursor({
   type: 2,
   color: "#000080",
