@@ -161,7 +161,7 @@ window.addEventListener("scroll", function () {
 
 // Kursor.js (lib
 new kursor({
-  type: 2,
+  type: 1,
   color: "#000080",
   removeDefaultCursor: true
 });
