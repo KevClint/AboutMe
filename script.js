@@ -85,9 +85,9 @@ btn1.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 
   if (document.body.classList.contains("dark-mode")) {
-    text1.textContent = "Dark Mode";
+    text1.src = "icon/dark_mode.svg";
   } else {
-    text1.textContent = "Light Mode";
+    text1.src = "icon/light_mode.svg";
   }
 });
 

@@ -38,11 +38,22 @@ body {
   transition: background 0.3s ease;
 
   position: relative;
-  background: var(--bgc-dark);
+  background: var(--bgc);
   background-size: 40%;
   background-repeat: repeat;
   background-position: center;
+
+  animation: moveBg 120s linear infinite;
 }
+@keyframes moveBg {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -50,21 +61,26 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.7); /* adjust opacity as needed */
+  background: var(--darken); /* adjust opacity as needed */
   z-index: -1;
   pointer-events: none;
+  overflow: hidden;
 }
 
 body.dark-mode {
   --text-color: black;
   --text-color2: black;
   --text-color3-aboutme: #464647;
-  --darken: none;
+
+  --darken: rgba(0, 0, 0, 0.1);
+  --bgc: url("assets/grid-white.jpg");
   --bgc-dark: url("assets/grid-white.jpg");
-  --two-section: #ffffffdc;
-  --three-section: #ffffff;
-  --fourth-section: #f9fafb;
-  --fourth-box: transparent;
+
+  --two-section: #ffffffe0;
+  --three-section: #ffffff65;
+  --fourth-section: #f9fafb46;
+  --fourth-box: rgba(255, 255, 255, 0.705);
+
   --educ-box: #e5e7eb;
   --footer-bgc: rgba(0, 0, 0, 0.096);
   --fine-shi: rgba(128, 128, 128, 0.432);
@@ -75,14 +91,17 @@ body.dark-mode {
   --text-color: white;
   --text-color2: #9ca0ab;
   --text-color3-aboutme: #e0e1e6;
+
   --bgc: url("assets/grid-blue.jpg");
-  --darken: darken;
+  --darken: rgba(0, 0, 0, 0.7);
   --bgc-dark: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     var(--bgc);
+
   --two-section: #18212fb9;
   --three-section: #1117251a;
   --fourth-section: #1f293721;
   --fourth-box: #111827;
+
   --educ-box: #1a1f2e;
   --footer-bgc: rgba(255, 255, 255, 0.041);
   --fine-shi: rgba(240, 248, 255, 0.274);
@@ -130,6 +149,7 @@ nav .logo h1 {
 nav ul {
   list-style: none;
   display: flex;
+  align-items: center;
 }
 nav ul li {
   margin-left: 1.5rem;
@@ -292,8 +312,10 @@ main {
     box-shadow: var(--main-shadow);
   }
 
-  & .intro,
-  .title {
+  & .intro, .info {
+    text-shadow: var(--main-text-shadow);
+  }
+  & .intro {
     font-size: 2.9rem;
     font-size: clamp(2.9rem, 2.48rem + 2.1vw, 5rem);
     font-family: var(--second-font);
@@ -426,6 +448,7 @@ main {
     height: 100%;
     width: 100%;
     box-shadow: var(--main-shadow);
+    background-color: var(--fourth-box);
     border: 2px solid;
     padding-top: 30px;
     padding: 25px;
@@ -518,34 +541,24 @@ main {
       font-size: clamp(1.9rem, 1.88rem + 0.10000000000000009vw, 2rem);
       font-weight: bold;
       text-shadow: var(--main-text-shadow);
+
+      @media (width <= 600px) {
+        text-align: center;
+      }
     }
 
-    & .flex-bottom {  
-      
-
+    & .flex-bottom {
       & .bottom-languages {
-        /* display: grid;
-        grid-template-columns: 150px 150px 150px 150px 150px 150px;
-        grid-template-rows: 150px; */
-        /* place-items: center; */
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        
         gap: 15px;
-        
 
-        /* @media (width <= 1118px) {
-          grid-template-columns: 150px 150px 150px;
-          grid-template-rows: 150px 150px;
+        @media (width <= 505px) {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
         }
-        @media (width <= 550px) {
-          grid-template-columns: 140px 140px;
-          grid-template-rows: 140px 140px 140px;
-        }
-        @media (width <= 375px) {
-          grid-template-columns: 120px 120px;
-          grid-template-rows: 120px 120px 120px;
-        } */
 
         & .box {
           display: flex;
@@ -553,12 +566,16 @@ main {
           align-items: center;
           border: 2px solid;
           width: 100%;
-          max-width: 260px;
           height: 100%;
           border-radius: 10px;
           padding: 15px;
           box-shadow: var(--main-shadow);
+          background-color: var(--fourth-box);
           transition: ease-in-out 0.4s;
+
+          @media (width <= 505px) {
+            max-width: 250px;
+          }
 
           &:hover {
             transform: translate(0px, -7px);
@@ -574,14 +591,7 @@ main {
 
           & img {
             width: 50px;
-            filter: drop-shadow(5px 5px 10px var(--orange));
-
-            @media (width <= 550px) {
-              width: 80px;
-            }
-            @media (width <= 375px) {
-              width: 60px;
-            }
+            filter: drop-shadow(0px 0px 10px var(--orange));
           }
           & p {
             text-shadow: var(--main-text-shadow);
@@ -616,6 +626,10 @@ main {
       font-weight: bold;
       text-shadow: var(--main-text-shadow);
       color: var(--text-color);
+
+      @media (width <= 600px) {
+        text-align: center;
+      }
     }
   }
   .container {
@@ -624,16 +638,10 @@ main {
     grid-template-rows: repeat(3, 1fr);
     gap: 30px;
 
-    @media (max-width: 1275px) {
-      grid-template-columns: repeat(3, 350px);
-    }
-    @media (max-width: 1132px) {
-      grid-template-columns: 400px 400px;
-    }
     @media (max-width: 918px) {
-      grid-template-columns: 350px 350px;
+      grid-template-columns: repeat(2, 1fr);
     }
-    @media (max-width: 768px) {
+    @media (max-width: 625px) {
       display: flex;
       flex-direction: column;
     }
@@ -706,6 +714,7 @@ main {
   background-color: var(--three-section);
 }
 .timeline {
+  width: 90%;
   max-width: 1200px;
   margin: auto;
   position: relative;
@@ -718,6 +727,10 @@ main {
     color: var(--text-color);
     text-shadow: var(--main-text-shadow);
     margin-bottom: 4rem;
+
+    @media (width <= 600px) {
+      text-align: center;
+    }
   }
 
   &::before {
@@ -751,7 +764,7 @@ main {
     }
 
     .content {
-      background: var(--educ-box);
+      background: var(--fourth-box);
       padding: 1.7rem 1.5rem;
       border-radius: 10px;
       width: 100%;
@@ -762,10 +775,6 @@ main {
         border: 1px solid var(--orange);
         transition: ease-in-out 0.2s;
         box-shadow: 0px 0px 7px var(--orange);
-      }
-
-      @media (max-width: 815px) {
-        border-radius: 10px 0 0 10px;
       }
 
       h3 {
@@ -872,7 +881,7 @@ main {
   width: 95%;
   max-width: 400px;
   border-radius: 12px;
-  background-color: var(--three-section);
+  background-color: var(--fourth-box);
 }
 form {
   height: 500px;
