@@ -127,6 +127,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
     x: 0,
     duration: 0.3
   });
+
+
+
+
+  
+
+
+
+
 });
 
 
