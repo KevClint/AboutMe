@@ -47,7 +47,7 @@
     </div>
     <!-- back to top -->
 
-    <nav class="hidden" id="navbar">
+    <nav class="hidden gsap-nav" id="navbar">
         <div class="logo">
             <img id="code-icon" src="icon/code-white.png" alt="code">
             <h1 id="clint">CLINT</h1>
@@ -126,15 +126,15 @@
         <div class="container1">
             <div class="left">
                 <div class="left-top">
-                    <button class="cta-btn ">&#128075; &nbsp; Wasup</button>
-                    <p class="intro ">Learning <b style="color: blue; font-weight: 400;" > web development </b> from scratch, step by step.</p>
-                    <p class="info ">
+                    <button class="cta-btn gsap-button" style="opacity: 0;">&#128075; &nbsp; Wasup</button>
+                    <p class="intro gsap-intro">Learning <b class="highlighted">web development</b> from scratch, step by step.</p>
+                    <p class="info gsap-info">
                         Hi im Clint, A student passionate about tech, coding, and design—driven to grow and keep learning.
                     </p>
                 </div>
                 <div class="left-bottom">
-                    <a>Learn More</a>
-                    <a href="form1.html">Contact Me</a>
+                    <a class="gsap-button" style="opacity: 0;">Learn More</a>
+                    <a class="gsap-button" style="opacity: 0;" href="form1.html">Contact Me</a>
                 </div>
             </div>
         </div>
@@ -143,10 +143,10 @@
     <section class="aboutme" id="aboutme">
         <div class="container">
             <div class="top-info-box">
-                <h1 class="title">About Me</h1>
+                <h1 class="title gsap-title1 title-part">About Me</h1>
             </div>
             <div class="bottom-about">
-                <div class="wrap ">
+                <div class="wrap"> 
                     <div class="wrap-top">
                         <i class="fa-regular fa-user iconBg iconBg-blue"></i>
                         <p>Who i am</p>
@@ -157,7 +157,7 @@
                         <p>• I'm always curious and motivated to improve my skills.</p>
                     </div>
                 </div>
-                <div class="wrap ">
+                <div class="wrap">
                     <div class="wrap-top">
                         <i class="fa-solid fa-code iconBg iconBg-purple"></i>
                         <p>What i do</p>
@@ -168,7 +168,7 @@
                         <p>• Practice front-end development by building small websites.</p>
                     </div>
                 </div>
-                <div class="wrap ">
+                <div class="wrap">
                     <div class="wrap-top">
                         <i class="fa-solid fa-bullseye iconBg iconBg-green"></i>
                         <p>My Goals</p>
@@ -179,7 +179,7 @@
                         <p>• Share knowledge to you and my fellow peers.</p>
                     </div>
                 </div>
-                <div class="wrap ">
+                <div class="wrap">
                     <div class="wrap-top">
                         <i class="fa-regular fa-lightbulb  iconBg iconBg-orange"></i>
                         <p>My Philosophy</p>
@@ -197,7 +197,7 @@
     <section class="skills" id="skills">
         <div class="container">
             <div class="top-title ">
-                <h1>Tech Stacks</h1>
+                <h1 class="gsap-title2 title-part">Tech Stacks</h1>
             </div>
             <div class="flex-bottom">
                 <div class="bottom-languages">
@@ -257,7 +257,7 @@
 
     <section class="projects" id="projects">
         <div class="projects-flex">
-            <div class="title ">Projects</div>
+            <div class="title gsap-title2 title-part">Projects</div>
             <div class="container">
 
                 <div class="box ">
@@ -453,13 +453,13 @@
         </div>
     </section>
 
-    <section class="education" id="education">
+    <section class="education" id="education" style="overflow: hidden;">
         <div class="timeline">
-            <h2>Education</h2>
+            <h2 class="gsap-title4 title-part">Education</h2>
 
             <div class="timeline-item">
                 <div class="icon"></div>
-                <div class="content ">
+                <div class="content bombaclat gsap-educ1" style="animation-delay: 100ms;">
                     <h3>Pagadian City Pilot School</h3>
                     <p>Barangay Balangasan, Pagadian City, Zamboanga del Sur</p>
                     <span>📅 2014 - 2019</span>
@@ -468,7 +468,7 @@
 
             <div class="timeline-item">
                 <div class="icon"></div>
-                <div class="content ">
+                <div class="content bombaclat gsap-educ2" style="animation-delay: 200ms;">
                     <h3>Zamboanga Del Sur National High School - Junior High School</h3>
                     <p>Roxas St., Sta. Maria, , Pagadian City, Philippines</p>
                     <span>📅 2022 - 2024 </span>
@@ -477,7 +477,7 @@
 
             <div class="timeline-item">
                 <div class="icon"></div>
-                <div class="content ">
+                <div class="content bombaclat gsap-educ3"style="animation-delay: 300ms;">
                     <h3>Zamboanga Del Sur National High School - Senior High School</h3>
                     <p>Roxas St., Sta. Maria, , Pagadian City, Philippines</p>
                     <span>📅 2024 - 2025</span>
@@ -488,7 +488,7 @@
 
     <section class="getintouch" id="contact">
         <div class="container">
-            <div class="title ">Get In Touch</div>
+            <div class="title gsap-title5 title-part">Get In Touch</div>
 
             <div class="cont-wrapper">
                 <div class="top-wrap ">
@@ -580,6 +580,12 @@
             </div>
         </div>
     </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrambleTextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="gsap.js"></script>
 
     <script src="https://unpkg.com/kursor"></script>
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.2/build/spline-viewer.js"></script>

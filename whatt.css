@@ -278,6 +278,7 @@ main {
   flex-direction: column;
   gap: 20px;
   max-width: 800px;
+  overflow: hidden;
 
   @media (width <= 790px) {
     justify-content: center;
@@ -358,7 +359,7 @@ main {
       &:nth-child(1) {
         background-color: var(--orange);
         color: white;
-        transition: all 0.35s;
+        
 
         &:hover {
           border: 2px solid;
@@ -369,7 +370,7 @@ main {
 
       &:nth-child(2) {
         border: 2px solid;
-        transition: all 0.35s;
+        
 
         &:hover {
           background-color: #145da0;
