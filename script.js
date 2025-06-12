@@ -153,15 +153,15 @@ window.addEventListener("scroll", function () {
   if (scrollTop > lastScrollTop) {
     navbar_c.style.top = "-80px";
   } else {
-    navbar_c.style.top = "0px";
+    navbar_c.style.top = "15px";
   }
 
   lastScrollTop = scrollTop;
 });
 
 // Kursor.js (lib)
-new kursor({
-  type: 2,
-  color: "#000080",
-  removeDefaultCursor: true
-});
+// new kursor({
+//   type: 2,
+//   color: "#000080",
+//   removeDefaultCursor: true
+// });
