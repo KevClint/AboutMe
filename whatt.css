@@ -54,6 +54,13 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  body {
+    background-size: 150%; /* Larger size = slower visual movement */
+
+  }
+}
+
 body::before {
   content: "";
   position: fixed;
