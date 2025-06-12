@@ -1,0 +1,83 @@
+/* ANIMATION AND SHIII */
+/* IMPORTANT SHI IN CSS */
+.Important-mtf-shi-css {
+  width: 90%;
+  max-width: 1600px;
+}
+
+
+
+
+
+/* Animation and shi */
+@keyframes bombaclat {
+  from {
+    opacity: 0;
+    scale: 0.95;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.bombaclat {
+  animation: bombaclat linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 20%;
+  overflow: hidden;
+}
+
+
+
+/* Animation and shi but sideways (left)*/
+.mamawjud {
+    animation: mamawjud linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+    overflow: hidden;
+}
+
+@keyframes mamawjud {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+
+/* Animation and shi but op side (right)*/
+@keyframes waza {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.waza {
+    animation: waza linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+    overflow: hidden;
+}
+
+
+/* disable animation */
+/* When no-animation is active, override animation styles */
+.no-animation .bombaclat,
+.no-animation .mamawjud,
+.no-animation .waza {
+  animation: none !important;
+}

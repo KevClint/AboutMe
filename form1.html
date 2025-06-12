@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: var(--bgc-dark);
+            background-blend-mode: var(--darken);
+            background-size: 40%;
+            font-family: var(--main-font);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* transition: all 0.6s; */
+        }
+
+        body.dark-mode {
+            /* LIGHT MODE */
+            --form-border: black;
+            --text-color: black;
+            --darken: none;
+            --bgc-dark: url("assets/grid-white.jpg");
+        }
+
+        :root {
+            /* DARK MODE */
+            --form-border: white;
+            --main-font: "Poppins", sans-serif;
+            --main-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            --main-text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4),
+                0px 7px 10px rgba(0, 0, 0, 0.15);
+
+            --text-color: white;
+            --bgc: url("assets/grid-blue.jpg");
+            --darken: darken;
+            --bgc-dark: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                var(--bgc);
+        }
+        .toggle {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            height: 40px;
+            width: 100px;
+            border-radius: 5px;
+            font-family: var(--main-font);
+            font-weight: 500;
+        }
+        section {
+            width: 90%;
+            max-width: 1600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            color: var(--text-color);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 2px solid var(--form-border);
+            width: 90%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: var(--main-shadow);
+            text-shadow: var(--main-text-shadow);
+
+            & h2 {
+                text-align: center;
+                padding-bottom: 10px;
+            }
+
+            & button {
+                height: 40px;
+                border-radius: 5px;
+                border: none;
+                cursor: pointer;
+                background-color: #145da0;
+                color: white;
+                margin-top: 10px;
+                font-family: var(--main-font);
+
+            }
+            & a {
+                display: inline-flex;
+                justify-content: center;
+                margin-top: 10px;
+                text-decoration-style:dashed ;
+                color: var(--text-color);
+                text-underline-offset: 4px; /* Increase this value as needed */
+                text-decoration-thickness: 2px; 
+            }
+        }
+
+        .cont {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            & input,
+            textarea {
+                border-radius: 5px;
+                border: 1px solid gray;
+                padding-left: 10px;
+            }
+
+            & input {
+                height: 40px;
+
+            }
+
+            & textarea {
+                height: 80px;
+                max-height: 150px;
+                resize: vertical;
+                padding-top: 10px;
+                font-family: var(--main-font);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <button type="button" class="toggle" id="toggle-btn1">Light Mode</button>
+
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <h2>Contact Us</h2>
+
+            <!-- Hidden Access Key -->
+            <input type="hidden" name="access_key" value="ba221bee-934f-48d8-a8da-581ebbc171be">
+
+
+            <div class="name-con cont">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Enter Your Name" required>
+            </div>
+
+            <div class="email-con cont">
+                <!-- Email Field -->
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
+            </div>
+
+            <div class="mes-con cont">
+                <!-- Message Field -->
+                <label for="message">Message</label>
+                <textarea name="message" id="message" placeholder="Enter Your Message" required></textarea>
+            </div>
+
+            <!-- Honeypot -->
+            <input type="checkbox" name="botcheck" style="display: none;">
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Form</button>
+
+            <a href="index.html">Back to frontpage</a>
+        </form>
+    </section>
+
+    <script>
+        const btn1 = document.getElementById("toggle-btn1");
+        const text1 = document.getElementById("toggle-btn1");
+
+        btn1.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+                text1.textContent = "Dark Mode";
+
+            } else {
+                text1.textContent = "Light Mode";
+            }
+        });
+    </script>
+</body>
+
+</html>
