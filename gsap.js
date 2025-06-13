@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrambleTextPlugin, ScrollTrigger);
-  
+
   gsap.to(".gsap-intro", {
     duration: 3,
     scrambleText: {
@@ -19,47 +19,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
     delay: 3
   });
 
-  gsap.fromTo(
-    ".gsap-info",
-    {
-      opacity: 0,
-      scale: 0
-    },
-    {
-      opacity: 1,
-      scale: 1,
-      duration: 1,
-      delay: 3
-    }
+  const popup = gsap.timeline({defaults: {opacity: 0}});
+  popup.fromTo(
+    ".gsap-button",
+    {scale: 0},
+    {opacity: 1, scale: 1, duration: 1, delay: 3} // starts at t = 3s
   );
 
-  const popup = gsap.timeline({default: {opacity: 0}});
-  popup
-    .fromTo(
-      ".gsap-button",
-      {
-        scale: 0
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 1,
-        delay: 3
-      }
-    )
-
-    .fromTo(
-      ".gsap-button",
-      {
-        scale: 0
-      },
-      {
-        opacity: 1,
-        scale: 1,
-        duration: 1,
-        delay: 3
-      }
-    );
+  gsap.fromTo(
+    ".gsap-info",
+    {scale: 0},
+    {scale: 1, duration: 1, delay: 3} // starts at t = 4s
+  );
 
   const titles = [1, 2, 3, 4, 5];
   titles.forEach((num, i) => {
@@ -72,7 +43,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
       duration: num === 1 || num === 5 ? 1 : 0.5
     });
   });
-
 
   const educs = [
     {selector: ".gsap-educ1", duration: 0.5},
@@ -91,13 +61,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       ease: "power2.out" // optional: smoother motion
     });
   });
-
-
 });
-
-
-
-
 
 // gsap.to(".ghost", {
 //   scrollTrigger: {
