@@ -61,79 +61,36 @@ document.addEventListener("DOMContentLoaded", (event) => {
       }
     );
 
-  gsap.to(".gsap-title1", {
-    scrollTrigger: {
-      trigger: ".gsap-title1",
-      toggleActions: "restart pause restart pause"
-    }, // start the animation when ".box" enters the viewport (once)
-    x: 0,
-    duration: 1
-  });
-  gsap.to(".gsap-title2", {
-    scrollTrigger: {
-      trigger: ".gsap-title2",
-      toggleActions: "restart pause restart pause"
-    }, // start the animation when ".box" enters the viewport (once)
-    x: 0,
-    duration: 0.5
-  });
-  gsap.to(".gsap-title3", {
-    scrollTrigger: {
-      trigger: ".gsap-title3",
-      toggleActions: "restart pause restart pause"
-    }, // start the animation when ".box" enters the viewport (once)
-    x: 0,
-    duration: 0.5
-  });
-  gsap.to(".gsap-title4", {
-    scrollTrigger: {
-      trigger: ".gsap-title4",
-      toggleActions: "restart pause restart pause"
-    }, // start the animation when ".box" enters the viewport (once)
-    x: 0,
-    duration: 0.5
-  });
-  gsap.to(".gsap-title5", {
-    scrollTrigger: {
-      trigger: ".gsap-title5",
-      toggleActions: "restart pause restart pause"
-    }, // start the animation when ".box" enters the viewport (once)
-    x: 0,
-    duration: 1
+  const titles = [1, 2, 3, 4, 5];
+  titles.forEach((num, i) => {
+    gsap.to(`.gsap-title${num}`, {
+      scrollTrigger: {
+        trigger: `.gsap-title${num}`,
+        toggleActions: "restart pause restart pause"
+      },
+      x: 0,
+      duration: num === 1 || num === 5 ? 1 : 0.5
+    });
   });
 
 
-  gsap.to(".gsap-educ1", {
-    scrollTrigger: {
-      trigger: ".gsap-educ1",
-      toggleActions: "restart pause restart pause"
-    }, // start the animation when ".box" enters the viewport (once)
-    x: 0,
-    duration: 0.5
+  const educs = [
+    {selector: ".gsap-educ1", duration: 0.5},
+    {selector: ".gsap-educ2", duration: 0.4},
+    {selector: ".gsap-educ3", duration: 0.3}
+  ];
+
+  educs.forEach(({selector, duration}) => {
+    gsap.to(selector, {
+      scrollTrigger: {
+        trigger: selector,
+        toggleActions: "restart pause restart pause"
+      },
+      x: 0,
+      duration,
+      ease: "power2.out" // optional: smoother motion
+    });
   });
-  gsap.to(".gsap-educ2", {
-    scrollTrigger: {
-      trigger: ".gsap-educ2",
-      toggleActions: "restart pause restart pause"
-    }, // start the animation when ".box" enters the viewport (once)
-    x: 0,
-    duration: 0.4
-  });
-  gsap.to(".gsap-educ3", {
-    scrollTrigger: {
-      trigger: ".gsap-educ3",
-      toggleActions: "restart pause restart pause"
-    }, // start the animation when ".box" enters the viewport (once)
-    x: 0,
-    duration: 0.3
-  });
-
-
-
-
-  
-
-
 
 
 });
