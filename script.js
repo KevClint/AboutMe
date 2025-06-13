@@ -160,8 +160,8 @@ window.addEventListener("scroll", function () {
 });
 
 // Kursor.js (lib
-new kursor({
-  type: 2,
-  color: "#000080",
-  removeDefaultCursor: true
-});
+// new kursor({
+//   type: 2,
+//   color: "#000080",
+//   removeDefaultCursor: true
+// });
