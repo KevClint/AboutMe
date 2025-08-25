@@ -28,9 +28,9 @@ I enjoy building **clean, responsive, and user-friendly websites** using **HTML,
 ---
 
 ## 🌐 Connect with Me  
-- 💼 [Portfolio Website]([https://your-portfolio-link.com](https://clint-aboutme2.vercel.app/))  
-- 📧 Email: [your-email@example.com](lorenzojustine74@gmail.com)  
-- 🐙 GitHub: [your-username](https://github.com/KevClint)  
+- 💼 [My Portfolio Website]([https://your-portfolio-link.com](https://clint-aboutme2.vercel.app/))  
+- 📧 Email: [lorenzojustine74@gmail.com](lorenzojustine74@gmail.com)  
+- 🐙 GitHub: [KevClint](https://github.com/KevClint)  
 
 ---
 
