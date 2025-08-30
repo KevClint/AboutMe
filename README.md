@@ -33,5 +33,10 @@ I enjoy building **clean, responsive, and user-friendly websites** using **HTML,
 - 🐙 GitHub: [KevClint](https://github.com/KevClint)  
 
 ---
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=KevClint/AboutMe&type=Date)](https://www.star-history.com/#KevClint/AboutMe&Date)
+
+--- 
 
 ⭐ *Thanks for visiting my About Me repo! Feel free to check out my projects and connect with me.*  
